@@ -41,15 +41,11 @@ jobs:
       # https://nose.readthedocs.io
 
       - run:
-          name: get into pizza-challenge folder
-          command: |
-            cd pizza-challenge
-
-      - run:
           name: run code
           command: |
             . venv/bin/activate
-            python3 pizzaDP.py
+            cd pizza-challenge
+            python pizzaDP.py
 
       - store_artifacts:
           path: test-reports
