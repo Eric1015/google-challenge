@@ -34,6 +34,11 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
+      - run:
+          name: make it overcommit
+          command: |
+            echo "0" >> "/proc/sys/vm/overcommit_memory"
+
       # run tests!
       # this example uses Django's built-in test-runner
       # other common Python testing frameworks include pytest and nose
